@@ -1,6 +1,8 @@
 # Java Class dir
-.settings
+.settings/
 bin/
+logs/
+URL/
 
 # Windows image file caches
 Thumbs.db
