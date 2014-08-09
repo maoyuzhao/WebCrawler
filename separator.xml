@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configration>
+	<separator>
+		<sourceFilename>
+			<value>E:\t_finance\remained_text</value>
+		</sourceFilename>
+		<storeFolderPath>
+			<value>E:\t_finance\</value>
+		</storeFolderPath>
+		<sourceEncoding>
+			<value>utf-8</value>
+		</sourceEncoding>
+		<destEncoding>
+			<value>utf-8</value>
+		</destEncoding>
+		<leastCharNum>
+			<value>50</value>
+		</leastCharNum>
+	</separator>
+</Configration>

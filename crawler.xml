@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configration>
+<crawler>
+		<!-- 必填配置项 -->
+		<seed>
+			<value>http://zh.wikipedia.org</value>
+			<description>
+				必填项，初始网站种子；
+				下载过程中不能修改
+			</description>
+		</seed>
+		<acRegex>
+			<isUpdated>false</isUpdated>
+			<value>^http://zh.wikipedia.org/zh-cn</value>
+			<description>
+				设置网页接收的范围；
+				下载过程中可以修改，且isUpadated为true时修改生效
+			</description>
+		</acRegex>
+		<rjRegex>
+			<isUpdated>false</isUpdated>
+			<value>[Pp]hoto|[Vv]ideo|tag</value>
+			<value>[Ll]ogin</value>
+			<value>\.(jpg|JPG|gif|GIF|png|PNG|mp3|MP3|pdf|PDF|wav|WAV|jpeg|JPEG|zip|ZIP)</value>
+			<value>[#\*\\@]</value>
+			<description>
+				设置需要过滤的网页范围；
+				下载过程中可以修改，且isUpadated为true时修改生效
+			</description>
+		</rjRegex>
+		<storePath>
+			<value>D:\wiki_data</value>
+			<description>
+				数据存储路径；下载过程中可以修改
+			</description>
+		</storePath>
+		<parse>
+			<useParse>true</useParse>
+			<isStore>true</isStore>
+			<parserType>jparser</parserType>
+			<acSelector>
+				<isUpdated>false</isUpdated>
+				<value>div#mw-content-text</value>
+			</acSelector>
+			<rjSelector>
+				<isUpdated>false</isUpdated>
+				<value>table</value>
+				<value>.toc</value>
+				<value>.thumb</value>
+				<value>.mw-editsection</value>
+				<value>.reflist</value>
+			</rjSelector>
+			<description>
+				useParse设置是否在爬取过程中提取正文
+				isStore设置是否保存已提取正文的网页；
+				当useParse为true时，isStore为true设置保存已提取提取正文网页，否者不保存；
+				当useParse为false时，isStore设置无效，爬虫将保存所有下载网页；
+				下载过程中仅isStore可以修改，useParse不能修改。
+				
+				设置parser类型，现只有两种parser类型：
+				1、jparser：使用规则抽取正文，当切仅当parserType为jparser时acSelector和rjSelector设置有效；
+				2、bparser：自动抽取正文，效果不如jparser
+				3、mixparser:优先选择jparser抽取正文，当jparser不能抽取时使用bparser抽取正文
+				下载过程中不能修改
+				
+				acSelector设置提取正文的模块表达式，参见org.jsoup.select.Selector的API；
+				下载过程中可以修改，且isUpadated为true时修改生效，生效后isUpdated会自动置为false；
+				
+				rjSelector设置需要过滤的模块表达式，详情参见org.jsoup.select.Selector的API；
+				下载过程中可以修改，且isUpadated为true时修改生效，生效后isUpdated会自动置为false；
+			</description>
+		</parse>
+		<downloadThreadNum>
+			<value>5</value>
+			<description>
+				设置下载线程数；
+				下载过程中不能修改
+			</description>
+		</downloadThreadNum>
+		<parseThreadNum>
+			<value>1</value>
+			<description>
+				设置解析线程数，一般设为下载线程数的1/10，可根据硬件水平自行调节；
+				下载过程中不能修改
+			</description>
+		</parseThreadNum>
+		<sleepTime>
+			<value>1</value>
+			<description>
+				设置下载线程睡眠时长，单位ms;
+				下载过程中可以修改
+			</description>
+		</sleepTime>
+			
+		
+		<!-- 下载速度控制 -->
+		<!--
+		<downloadThreadNum>
+			<value>1</value>
+			<description>
+				设置下载线程数；
+				下载过程中不能修改
+			</description>
+		</downloadThreadNum>
+		<parseThreadNum>
+			<value>1</value>
+			<description>
+				设置解析线程数，一般设为下载线程数的1/10，可根据硬件水平自行调节；
+				下载过程中不能修改
+			</description>
+		</parseThreadNum>
+		<sleepTime>
+			<value>5000</value>
+			<description>
+				设置下载线程睡眠时长，单位ms;
+				下载过程中可以修改
+			</description>
+		</sleepTime>
+		-->
+		
+		<!-- 文件存储控制 -->
+		<!--
+		<storePath>
+			<value>WebSite</value>
+			<description>
+				数据存储路径；下载过程中可以修改
+			</description>
+		</storePath>
+		<storageType>
+			<value>single</value>
+			<description>
+				设置存储类型，现只有两种存储类型：
+				1、multiple：多文件存储，即一个网页存储在一个文件中；
+				2、single：单文件存储，即多个网页存储在一个文件中；
+				下载过程中不能修改
+			</description>
+		</storageType>
+		<htmlNumOfEachTimestamp>
+			<value>10000</value>
+			<description>
+				下载页面达到该数量时给予一个时间戳，开始下一次存储；
+				下载过程中可以修改
+			</description>
+		</htmlNumOfEachTimestamp>
+		<encoding>
+			<value>utf-8</value>
+			<description>
+				设置下载编码；
+				下载过程中不能修改
+			</description>
+		</encoding>
+		-->
+		
+		<!-- 爬取内容控制 -->
+		<!--
+		<urlReplacement>
+			<isUpdated>false</isUpdated>
+			<source>1</source><target>11</target>
+			<source>2</source><target>22</target>
+			<source>3</source><target>33</target>
+			<source>4</source><target>44</target>
+			<source>5</source><target>55</target>
+			<source>6</source><target>66</target>
+			<source>7</source><target>77</target>
+			<source>8</source><target>88</target>
+		</urlReplacement>
+		<acRegex>
+			<isUpdated>false</isUpdated>
+			<description>
+				设置网页接收的范围；
+				下载过程中可以修改，且isUpadated为true时修改生效
+			</description>
+		</acRegex>
+		<rjRegex>
+			<isUpdated>false</isUpdated>
+			<value>[Ll]ogin</value>
+			<value>\.(jpg|JPG|gif|GIF|png|PNG|mp3|MP3|pdf|PDF|wav|WAV|jpeg|JPEG|zip|ZIP)</value>
+			<value>[#\*\\@]</value>
+			<description>
+				设置需要过滤的网页范围；
+				下载过程中可以修改，且isUpadated为true时修改生效
+			</description>
+		</rjRegex>
+		<dateFilter>
+			<useDateFilter>false</useDateFilter>
+			<isUpdated>false</isUpdated>
+			<dateRegex>
+				<value>\d{4}年\d{2}月\d{2}日</value>
+				<value>\d{4}-\d{2}-\d{2}</value>
+			</dateRegex>
+			<startDate>
+				<value>2013-10-08</value>
+			</startDate>
+			<endDate>
+				<value>2013-10-07</value>
+			</endDate>
+			<description>
+				设置是否需要过滤不在时间范围的网页，当useDateFilter为true时其他设置有效，；
+				下载过程中除了useDateFilter，其他均可以修改，且isUpdated为true时修改生效。
+			</description>
+		</dateFilter>
+		-->
+		
+		<!-- 正文抽取控制 -->
+		<!--
+		<parse>
+			<useParse>false</useParse>
+			<isStore>true</isStore>
+			<acSelector>
+				<isUpdated>false</isUpdated>
+				<value>div#artibody p</value>
+				<value>div.articalContent p</value>
+				<value>font#zoom.f14 p</value>
+			</acSelector>
+			<rjSelector>
+				<isUpdated>false</isUpdated>
+			</rjSelector>
+			<description>
+				useParse设置是否在爬取过程中提取正文
+				isStore设置是否保存已提取正文的网页；
+				当useParse为true时，isStore为true设置保存已提取提取正文网页，否者不保存；
+				当useParse为false时，isStore设置无效，爬虫将保存所有下载网页；
+				下载过程中仅isStore可以修改，useParse不能修改。
+				
+				acSelector设置提取正文的模块表达式，参见org.jsoup.select.Selector的API；
+				下载过程中可以修改，且isUpadated为true时修改生效，生效后isUpdated会自动置为false；
+				
+				rjSelector设置需要过滤的模块表达式，详情参见org.jsoup.select.Selector的API；
+				下载过程中可以修改，且isUpadated为true时修改生效，生效后isUpdated会自动置为false；
+			</description>
+		</parse>
+		-->
+		
+		<!-- 内存使用控制 -->
+		<!--
+		<bloomFilter>
+			<errorRate>
+				<value>0.0001</value>
+			</errorRate>
+			<expectedNumberOfElements>
+				<value>160000000</value>
+			</expectedNumberOfElements>
+			<description>
+				设置Bloom过滤去参数；
+				BloomFilter用于URL去重，保证已访问和即将访问的URL的唯一性；
+				errorRate表示可容忍的错误率；
+				expectedNumberOfElements表示对网站URL数的一个预期；
+				内存使用率计算公式为：
+					k = ceil(-log_2(errorRate))
+					c = k / ln(2)
+					memCost = ceil(c * expectedNumberOfElements)(bit)
+				默认值将占用385MB的内存空间；
+				下载过程中不能修改。
+			</description>
+		</bloomFilter>
+		<maxBodySize>
+			<value>0</value>
+			<description>
+				控制爬取页面体积，0代表不限制，单位为Byte；
+				下载过程中不能修改。
+			</description>
+		</maxBodySize>
+		<maxDocQueueSize>
+			<value>300</value>
+			<description>
+				设置网页队列长度；
+				最多使用内存大小为maxBodySize * maxDocQueueSize，
+				然而在程序正常运行，且downloadThreadNum和parseThreadNum的比例合理，
+				docQueueSize的值一般在10以内，在LOG INFO中可以实时查看到;
+				下载过程中不能修改。
+			</description>
+		</maxDocQueueSize>
+		<maxUrlQueueSize>
+			<value>100000</value>
+			<description>
+				设置url队列长度，若低于2000，将默认修正为2000；
+				使用内存大小为URL目录中currentUrl.txt和urlCache.txt大小之和，
+				而maxUrlQueueSize为这两个队列的最大长度；
+				下载过程中不能修改。
+			</description>
+		</maxUrlQueueSize>
+		-->
+		
+		<!-- 其他设置 -->
+		<!--
+		<timeout>
+			<value>0</value>
+			<description>
+				设置超时时长，0代表不设超时，单位ms;下载过程中可以修改
+			</description>
+		</timeout>
+		<proxy>
+			<useProxy>
+				<value>false</value>
+			</useProxy>
+			<host>
+				<value>127.0.0.1</value>
+			</host>
+			<port>
+				<value>8087</value>
+			</port>
+			<description>
+				设置代理;下载过程中不能修改
+			</description>
+		</proxy>
+		-->
+	</crawler>
+</Configration>

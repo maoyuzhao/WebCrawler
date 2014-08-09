@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/edu/bupt/crawler/main/Crawler.java=UTF-8
+encoding//src/edu/bupt/crawler/main/Filter.java=UTF-8
+encoding//src/edu/bupt/crawler/main/Main.java=UTF-8
+encoding//src/edu/bupt/crawler/main/Parser.java=UTF-8
+encoding//src/edu/bupt/crawler/main/Separator.java=UTF-8
+encoding//src/edu/bupt/crawler/main/TechCronchCrawler.java=UTF-8
+encoding//src/edu/bupt/crawler/main/WikiCrawler.java=UTF-8
+encoding//src/edu/bupt/crawler/main/WikiParser.java=UTF-8
+encoding//src/edu/bupt/test/Test.java=UTF-8
+encoding//src/edu/bupt/util/BloomFilter.java=UTF-8
+encoding//src/edu/bupt/util/JudgeContent.java=UTF-8
+encoding//src/edu/bupt/util/KVPair.java=UTF-8
+encoding/<project>=UTF-8
+encoding/log4j.properties=UTF-8

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configration>
+	<filter>
+		<sourceFolderPath>
+			<value>E:\finance</value>
+		</sourceFolderPath>
+		<storeFolderPath>
+			<value>E:\t_finance</value>
+		</storeFolderPath>
+		<encoding>
+			<value>utf-8</value>
+		</encoding>
+		<bloomFilter>
+			<errorRate>
+				<value>0.0001</value>
+			</errorRate>
+			<expectedNumberOfElements>
+				<value>160000000</value>
+			</expectedNumberOfElements>
+		</bloomFilter>
+		<chineseCharNumberThreshold>
+			<value>5</value>
+		</chineseCharNumberThreshold>
+		<chineseCharProportion>
+			<value>0.7</value>
+		</chineseCharProportion>
+		<saveWhenErrChar>
+			<value>true</value>
+		</saveWhenErrChar>
+	</filter>
+</Configration>

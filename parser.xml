@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configration>
+<parser>
+		<srcPath>
+			<value>D:\Work\wiki\wiki_data\p</value>
+		</srcPath>
+		<storePath>
+			<value>D:\Work\wiki\wiki_data</value>
+		</storePath>
+		<storageType>
+			<value>single</value>
+		</storageType>
+		<parserType>
+			<value>jparser</value>
+		</parserType>
+		<acSelector>
+			<isUpdated>false</isUpdated>
+			<value>div#mw-content-text</value>
+		</acSelector>
+		<rjSelector>
+			<isUpdated>false</isUpdated>
+			<value>table</value>
+			<value>pre</value>
+			<value>sup</value>
+			<value>.toc</value>
+			<value>.thumb</value>
+			<value>.mw-editsection</value>
+			<value>.reflist</value>
+		</rjSelector>
+		<readThreadNum>
+			<value>10</value>
+		</readThreadNum>
+		<parseThreadNum>
+			<value>8</value>
+		</parseThreadNum>
+		<!--
+		<readThreadNum>
+			<value>4</value>
+		</readThreadNum>
+		<parseThreadNum>
+			<value>4</value>
+		</parseThreadNum>
+		<srcPath>
+			<value>E:\sina_single\up</value>
+		</srcPath>
+		<storePath>
+			<value>E:\sina_single</value>
+		</storePath>
+		<storageType>
+			<value>single</value>
+		</storageType>
+		<htmlNumOfEachTimestamp>
+			<value>10000</value>
+		</htmlNumOfEachTimestamp>
+		<encoding>
+			<value>utf-8</value>
+		</encoding>
+		<dateFilter>
+			<useDateFilter>false</useDateFilter>
+			<dateRegex>
+				<value>\d{4}年\d{2}月\d{2}日</value>
+				<value>\d{4}-\d{2}-\d{2}</value>
+			</dateRegex>
+			<startDate>
+				<value>2013-10-08</value>
+			</startDate>
+			<endDate>
+				<value>2013-10-07</value>
+			</endDate>	
+		</dateFilter>
+		<parserType>
+			<value>mixparser</value>
+		</parserType>
+		<acSelector>
+			<isUpdated>false</isUpdated>
+			<value>div#artibody p</value>
+			<value>div.articalContent p</value>
+			<value>font#zoom.f14 p</value>
+		</acSelector>
+		<rjSelector>
+			<isUpdated>false</isUpdated>
+		</rjSelector>
+		<maxDocQueueSize>
+			<value>1000</value>
+		</maxDocQueueSize>
+		-->
+</parser>
+</Configration>
